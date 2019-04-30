@@ -1,0 +1,26 @@
+package pageobjects;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import first.testbase;
+
+public class Courses extends testbase {
+	public WebDriver driver;
+
+	public Courses(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	By check = By.id("search-courses");
+
+	public WebElement contentverify() throws IOException {
+		// testbase tbase = new testbase();
+		// driver = tbase.data();
+		return driver.findElement(check);
+	}
+
+}

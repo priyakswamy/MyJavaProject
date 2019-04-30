@@ -1,0 +1,24 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class FFDriver {
+
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+			String exePath = "C:\\Users\\Dell\\Documents\\Selenium_Content\\drivers\\geckodriver.exe";
+			System.setProperty("webdriver.gecko.driver", exePath);
+			
+			FirefoxDriver ff = new FirefoxDriver();
+			ff.get("http://google.com");
+			System.out.println("Successfully opened the website, www.google.com");
+			String Title = ff.getTitle();
+			int titlelength = ff.getTitle().length();
+		    System.out.println("Title of the Page : " +Title);
+			System.out.println("Title Length : " +titlelength);
+			
+		ff.quit();
+		}
+
+
+	}
+

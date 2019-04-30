@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel = "tests" thread-count = "2">
+<listeners>
+<listener class-name = "Listeners"/>
+</listeners>
+<parameter name = "url" value = "https://google.com"/>
+  <test thread-count="5" name="Test">
+      <classes>
+      <class name = "TestNG"/>
+
+      <class name="TestNG2">
+      </class>
+      </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,6 @@
+
+interface Pet {
+	
+	String typeOfSound();
+	
+}

@@ -1,0 +1,22 @@
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumPractice {
+
+	WebDriver driver;
+	
+	public void openBrowser() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dell\\Documents\\Selenium_Content\\drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("https://www.amazon.in/");
+		driver.findElement(By.id("twotabsearchtextbox")).sendKeys(Keys.SHIFT,"electronics");
+	}
+	public static void main(String[] args) {
+SeleniumPractice sp = new SeleniumPractice();
+sp.openBrowser();
+	}
+
+}

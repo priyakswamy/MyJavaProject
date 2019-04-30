@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class Calc {
+
+	static int a;
+	static int b;
+		// TODO Auto-generated constructor stub
+		
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner operation = new Scanner(System.in);
+		
+System.out.println("Enter an integer"); 
+a = operation.nextInt();
+System.out.println("Enter next integer"); 
+b= operation.nextInt();
+System.out.println("Enter type of operation");
+	}
+public void add() {
+	// TODO Auto-generated method stub
+	
+	int sum= a+b;
+	System.out.println("Sum" +sum);
+	
+}
+ 
+public void sub() { 
+	int sub = a-b;
+    System.out.println("Sub" +sub);
+}
+
+public int div () {
+	int div = a/b;
+	System.out.println("Div"+div);
+	return div;
+	}
+{
+	
+/*if (operation == add);
+operation.add();
+else if (operation ==sub);
+operation.sub();
+else 	
+operation.div();
+}*/
+
+ 
+
+	
+}}
+

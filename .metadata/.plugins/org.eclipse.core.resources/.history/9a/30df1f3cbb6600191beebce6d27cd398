@@ -1,0 +1,54 @@
+package first;
+
+import java.io.IOException;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import junit.framework.Assert;
+import pageobjects.Courses;
+import pageobjects.Homepage;
+
+public class Content_check extends testbase {
+public static WebDriver driver;
+public static Logger log = org.apache.log4j.LogManager.getLogger(Logger.class.getName());	
+	/*public Content_check(WebDriver driver) {
+super();
+}*/
+
+	@BeforeTest
+	public void getdetails() throws IOException {
+	//testbase tsb = new testbase();
+driver = data();
+driver.get(prop.getProperty("url"));
+	}
+	
+@Test
+public void checkingContent() throws IOException {
+//testbase tb = new testbase();
+//driver = data();
+Homepage hp = new Homepage(driver);
+//driver.get(prop.getProperty("url"));
+hp.login().click();
+String userdetails =prop.getProperty("username");
+hp.username().sendKeys(userdetails);
+String password = prop.getProperty("password");
+hp.password().sendKeys(password);
+hp.submit().click();
+Courses course = new Courses(driver);
+//Assert.assertEquals(course.contentverify().getText(), "Find a course");
+Assert.assertFalse(course.contentverify().isDisplayed());
+log.info("test completed");
+
+}
+
+
+@AfterTest
+public void teardown() {
+	driver.close();
+}
+
+}

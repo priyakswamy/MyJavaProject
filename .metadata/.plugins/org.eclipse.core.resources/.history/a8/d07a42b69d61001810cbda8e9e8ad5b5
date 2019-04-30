@@ -1,0 +1,32 @@
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Day1 {
+	System.setProperty("webdriver.chrome.driver",
+			"C:\\Users\\Dell\\Documents\\Selenium_Content\\drivers\\chromedriver.exe");
+	WebDriver driver = new ChromeDriver();
+
+	public void openBrowser() {
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
+		driver.get("http://amazon.in");
+		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Electronics");
+		driver.findElement(By.name(
+				"a-aui_51744-c a-aui_57326-c a-aui_72554-c a-aui_accessibility_49860-c a-aui_attr_validations_1_51371-c a-aui_bolt_62845-c a-aui_perf_130093-c a-aui_ux_113788-c a-aui_ux_114039-c a-aui_ux_138741-c a-aui_ux_59374-c a-aui_ux_60000-c a-meter-animate"))
+				.click();
+		driver.findElement(By.id("add-to-cart-button")).click();
+
+	}
+
+	public static void main(String[] args) {
+		
+
+		// TODO Auto-generated method stub
+		Day1 d1 = new Day1();
+		d1.openBrowser();
+	}
+
+}

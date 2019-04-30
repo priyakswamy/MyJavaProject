@@ -1,0 +1,49 @@
+package first;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
+public class testbase {
+
+	public WebDriver driver;
+	Properties prop;
+	
+	public WebDriver data() throws IOException {
+
+		prop = new Properties();
+		FileInputStream fis = new FileInputStream("C:\\Users\\Dell\\firstmaven\\src\\main\\java\\property.properties");
+		prop.load(fis);
+		String browsername = prop.getProperty("browser");
+		if (browsername.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver",
+					"C:\\Users\\Dell\\Documents\\Selenium_Content\\drivers\\chromedriver.exe");
+			driver = new ChromeDriver();
+		}
+		
+		
+
+		// driver.manage().timeouts().implicitlyWait(4000, TimeUnit.SECONDS);
+		// driver.findElement(By.xpath("//div[@class 
+		// 'sumome-react-wysiwyg-move-handle']/div[5]")).click();
+		return driver;
+	}
+	
+	public void screenshot() throws IOException {
+		data();
+		File src =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	FileHandler.copy(src, new File("C:\\Users\\Dell\\Documents\\Selenium_Content\\Screenshots\\screenshot.png"));
+	}
+	
+
+}

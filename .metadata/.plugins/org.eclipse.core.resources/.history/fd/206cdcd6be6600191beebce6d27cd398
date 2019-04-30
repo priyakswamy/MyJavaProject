@@ -1,0 +1,36 @@
+package first;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import pageobjects.Homepage;
+
+public class testcase extends testbase {
+	
+	public testcase() { super();  }
+	
+	@BeforeTest
+	public void getdetails() throws IOException {
+		// testbase tsb = new testbase();
+		driver = data();
+		driver.get(prop.getProperty("url"));
+	}
+
+	@Test
+	public void test() throws IOException {
+//		testbase testBase = new testbase();
+//		driver = testBase.data();
+//		driver.get("http://www.qaclickacademy.com/");
+		driver.manage().window().maximize();
+		Homepage hp = new Homepage(driver);
+		hp.login().click();
+		hp.username().sendKeys("meetpriyak@gmail.com");
+		hp.password().sendKeys("Sky2high");
+		hp.submit().click();
+	}
+
+	
+}

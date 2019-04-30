@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Calc {
+
+	static int a;
+	static int b;
+		// TODO Auto-generated constructor stub
+		Scanner in = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		
+	
+System.out.println("Enter an integer"); 
+a = in.nextInt();
+System.out.println("Enter next integer"); 
+b= in.nextInt();
+	}
+public static void add() {
+	// TODO Auto-generated method stub
+	
+	int sum= a+b;
+	System.out.println("Sum" +sum);
+	
+}
+ 
+public static void sub()
+	}
+
+	
+
+

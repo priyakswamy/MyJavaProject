@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Array_duplicate {
+
+	public void array() {
+
+		int a[] = { 3, 6, 7, 5, 3, 6 };
+		int count = 0;
+		for (int i = 0; i < a.length; i++) {
+			for (int j = i + 1; j < a.length;j++) {
+		/*Set <Integer> hs = new HashSet<Integer>();
+
+for (Integer i : a)
+	hs.add(i);
+	System.out.println(hs);*/
+
+	
+
+				if (a[i] == a[j]) {
+					count++;
+					if (count !=0) {
+						System.out.println(a[j]);
+						
+					}
+			System.out.println(a[i]);
+				
+				}
+	}
+
+			}
+		}
+
+
+
+	public static void main(String[] args) {
+		Array_duplicate arr = new Array_duplicate();
+		arr.array();
+
+	}
+
+}
